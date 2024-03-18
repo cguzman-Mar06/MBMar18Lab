@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>MBMar18Model</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{4ed61cf9-e26f-49b8-8ca5-fe85421d3858}</ProjectGuid>
+    <Name>MBMar18</Name>
+    <RootNamespace>MBMar18</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Base Enums\" />
+    <Folder Include="Display Menu Items\" />
+    <Folder Include="EDT Strings\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Menu Extensions\" />
+    <Folder Include="Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxEdt\DetalleRegistro">
+      <SubType>Content</SubType>
+      <Name>DetalleRegistro</Name>
+      <Link>EDT Strings\DetalleRegistro</Link>
+    </Content>
+    <Content Include="AxEdt\IdRegistro">
+      <SubType>Content</SubType>
+      <Name>IdRegistro</Name>
+      <Link>EDT Strings\IdRegistro</Link>
+    </Content>
+    <Content Include="AxEnum\CiudadRegistro">
+      <SubType>Content</SubType>
+      <Name>CiudadRegistro</Name>
+      <Link>Base Enums\CiudadRegistro</Link>
+    </Content>
+    <Content Include="AxForm\MBMar18Form">
+      <SubType>Content</SubType>
+      <Name>MBMar18Form</Name>
+      <Link>Forms\MBMar18Form</Link>
+    </Content>
+    <Content Include="AxMenuExtension\HRM.MBMar18Model">
+      <SubType>Content</SubType>
+      <Name>HRM.MBMar18Model</Name>
+      <Link>Menu Extensions\HRM.MBMar18Model</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\MBMar18Table">
+      <SubType>Content</SubType>
+      <Name>MBMar18Table</Name>
+      <Link>Display Menu Items\MBMar18Table</Link>
+    </Content>
+    <Content Include="AxTable\MBMar18Table">
+      <SubType>Content</SubType>
+      <Name>MBMar18Table</Name>
+      <Link>Tables\MBMar18Table</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>
